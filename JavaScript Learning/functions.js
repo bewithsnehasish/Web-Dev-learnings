@@ -16,7 +16,7 @@ printAllUsers(users)
 */
 
 //Making a function to do arithmetic operations
-
+/*
 function divide(num1,num2){
     return num1 / num2 ;
 }
@@ -45,6 +45,22 @@ function doArithmetic(num1,num2,whatToDo){
 
 var answer = doArithmetic(1,2,substraction)
 console.log(answer)
+*/
 
+//Function to print Floyd's triangle 
+
+/*
+function floydTriangle(numberofRows){
+    for (var i = 0 ; i < numberofRows ; i++){
+        var stringToPrint = "";
+        for (var j = 0 ; j < i+1 ; j++){
+            stringToPrint = stringToPrint + "*" 
+        }
+    console.log(stringToPrint)
+    }
+}
+
+floydTriangle(10)
+*/
 
 
