@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require("fs");
-const port = 3001;
+// const port = 3000;
+const path = require("path");
 const app = express();
 
 app.use(bodyParser.json());
@@ -98,16 +99,19 @@ app.delete('/todos/:id', (req, res) => {
   });
 });
 
+app.get("/",(req,res)=>{
+  res.sendFile(path.join(__dirname,"index.html"))
+})
+
 // for all other routes, return 404
-app.use((req, res, next) => {
-  res.status(404).send();
-});
-
-module.exports = app;
+// app.use((req, res, next) => {
+//   res.status(404).send();
+// });
 
 
-function started(){
-  console.log(`Example app listening on port ${port}`);
-}
+app.listen(3000);
+// function started(){
+//   console.log(`Example app listening on port ${port}`);
+// }
 
-app.listen(port,started);
+// app.listen(port,started);
