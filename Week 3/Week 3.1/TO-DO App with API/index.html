@@ -6,6 +6,23 @@
     <title>TO-DO App</title>
 </head>
 <script>
+    // function deleteTodoFromDom(id) {
+
+    // }
+
+    function deleteTodo(id){
+        console.log(id);
+        fetch("http://localhost:3001/todos/"+id,{
+            method:"DELETE",
+            headers:{
+                "Content-Type":"application/json"
+            }
+        }).then(() => {                 
+            console.log("Todo Deleted ✅");
+            location.reload(true);
+            });
+    }
+
     function todosCallback(data) {
         console.log(data)
         var parentElement = document.getElementById("mainArea");
@@ -21,6 +38,7 @@
 
             var grandChildElement3 = document.createElement("button");
             grandChildElement3.innerHTML = "Delete"
+            grandChildElement3.setAttribute("onclick", "deleteTodo("+ data[i].id + ")")
 
             childElement.appendChild(grandChildElement1)
             childElement.appendChild(grandChildElement2)
@@ -47,9 +65,28 @@
 
     function parsedResponse(data){
         console.log(data);
+        // var parentElement = document.getElementById("mainArea");
+
+        // var childElement = document.createElement("div");
+            
+        // var grandChildElement1 = document.createElement("span");
+        // grandChildElement1.innerHTML = data.title;
+
+        // var grandChildElement2 = document.createElement("span");
+        // grandChildElement2.innerHTML = data.description;
+
+        // var grandChildElement3 = document.createElement("button");
+        // grandChildElement3.innerHTML = "Delete"
+
+        // childElement.appendChild(grandChildElement1)
+        // childElement.appendChild(grandChildElement2)
+        // childElement.appendChild(grandChildElement3)
+        // parentElement.appendChild(childElement);
+        location.reload(true);
     }
     function callback(resp){
         resp.json().then(parsedResponse);
+        // getData()
     }
     function onPress() {
         var title = document.getElementById("title1").value;
@@ -70,10 +107,10 @@
 </script>
 <body>
     Todo title
-    <input type="text" id="title1"></input>
+    <input type="text" id="title1" required></input>
     <br><br>
     Todo description
-    <input type="text" id="description"></input>
+    <input type="text" id="description" required></input>
     <br><br>
     <button onclick="onPress()">send todo</button>
     <div id="mainArea">
