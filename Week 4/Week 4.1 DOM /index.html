@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Add Subtract</title>
+</head>
+<body>
+    <input type="number" name="firstn" id="firstn" placeholder="Enter Number" required>
+    <label for="firstn">Enter first number</label>
+    <br>
+    <input type="number" name="secondn" id="secondn" placeholder="Enter Number" required>
+    <label for="firstn">Enter second number</label>
+    <br>
+    <button onclick="sum()">Calculate SUM </button>
+    <p id="answer"></p>
+</body>
+<script>
+    function sum(){
+        var a = document.getElementById("firstn").value;
+        var b = document.getElementById("secondn").value;
+        const ans = parseInt(a) + parseInt(b) ;
+        let answer = document.getElementById("answer");
+        answer.innerHTML = `Hence the sum of two numbers are `+ ans;
+        console.log(ans)
+    }
+</script>
+</html>
