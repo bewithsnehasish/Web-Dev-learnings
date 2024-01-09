@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO App</title>
+</head>
+<body>
+    <div>
+        <input type="text" name="title" id="title" placeholder="title">
+        <br>
+        <input type="text" name="description" id="description" placeholder="description">
+        <br>
+        <button onclick="addTodo()">Add TO-DO</button>
+        <div id="container"></div>
+    </div>
+</body>
+<!-- <script src="app.js"></script> -->
+<script>
+    function addTodo(){
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        const originalHTML = document.getElementById("container").innerHTML;
+        //document.createElement
+        const outerDiv = document.createElement("div");
+        outerDiv.innerHTML = title;
+        document.getElementById("container").appendChild(outerDiv)
+        
+        // document.getElementById("container").innerHTML = originalHTML + 
+        // `
+        // <div>
+        //     <div>${title}</div>
+        //     <div>${description}</div>        
+        //     <button>Mark as Done</buttom>   
+        // </div>
+        // `
+    }
+</script>
+</html>
