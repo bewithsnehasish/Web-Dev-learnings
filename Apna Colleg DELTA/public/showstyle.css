@@ -5,7 +5,7 @@ body {
     padding: 0;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
     color: #333;
     margin-top: 20px;
@@ -34,45 +34,69 @@ h1 {
 a {
     color: #007BFF;
     text-decoration: none;
-    margin-right: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-button, .btn {
+button {
     background-color: #007BFF;
     border: none;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    margin: 5px 0;
 }
 
-button:hover, .btn:hover {
+button:hover {
     background-color: #0056b3;
-}
-
-button.delete {
-    background-color: #dc3545;
-}
-
-button.delete:hover {
-    background-color: #c82333;
-}
-
-.create-button {
-    display: block;
-    width: max-content;
-    margin: 20px auto;
-    text-align: center;
 }
 
 hr {
     border: 1px solid #ddd;
     margin: 40px 0;
+}
+
+/* Form Styles */
+form {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+p {
+    color: #333;
+    margin: 10px 0;
+}
+
+b {
+    font-weight: bold;
+}
+
+i {
+    font-style: italic;
 }

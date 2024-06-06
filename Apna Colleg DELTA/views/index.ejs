@@ -3,27 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EchoSphere</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>Quora Posts</h1>
+    <h1>EchoSphere</h1>
     <% for(post of posts){ %>
     <div class="post">
         <h3 class="user">@<%= post.username %></h3>
         <h4 class="content"><%= post.content %></h4>
         <br>
-        <a href="/posts/<%= post.id%>">See in Detail</a>
-        <a href="/posts/<%= post.id%>/edit">Edit Post</a>
+        <a href="/posts/<%= post.id%>" class="btn">See in Detail</a>
+        <a href="/posts/<%= post.id%>/edit" class="btn">Edit Post</a>
         <br>
         <form action="/posts/<%= post.id %>?_method=DELETE" method="post">
-            <button>Delete Post</button>
+            <button class="delete">Delete Post</button>
         </form>
     </div>
     <%}%>
     <hr>
-    <br>
-    <a href="http://localhost:8080/posts/new">Create New Post</a>
+    <a href="/posts/new" class="create-button"><button>Create New Post</button></a>
 </body>
 </html>
-
