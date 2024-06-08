@@ -9,6 +9,7 @@
   "author": "Snehasish Mandal",
   "license": "ISC",
   "dependencies": {
-    "@faker-js/faker": "^8.4.1"
+    "@faker-js/faker": "^8.4.1",
+    "mysql2": "^3.10.0"
   }
 }
