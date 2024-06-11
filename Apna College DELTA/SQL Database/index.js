@@ -3,7 +3,13 @@ const mysql = require('mysql2');
 const express = require('express');
 const app = express();
 const path = require("path")
+const methodOverride = require("method-override");
 
+
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({extended:true}));
+app.set("view engine","ejs");
+app.set("views",path.join("__dirname","/views"))
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"/views"))
@@ -18,14 +24,14 @@ app.use(express.static(path.join(__dirname,"public")));
 
 
 
-let getRandomUser = () => {
-  return [
-    faker.string.uuid(),
-    faker.internet.userName(),
-    faker.internet.email(),
-    faker.internet.password(),
-  ];
-}
+// let getRandomUser = () => {
+//   return [
+//     faker.string.uuid(),
+//     faker.internet.userName(),
+//     faker.internet.email(),
+//     faker.internet.password(),
+//   ];
+// }
 
 // let q = "SHOW TABLES;"
 // // Inserting New Data into the Database;
@@ -85,7 +91,52 @@ app.get("/user",(req,res) => {
 })
 
 // To edit data of the Users Route 
-app.get("/user/")
+app.get("/user/:id/edit",( req, res ) =>{
+  let {id} = req.params;
+  // console.log(id);
+  let q = `SELECT * FROM user WHERE id='${id}'`;
+  try{
+    connection.query(q,(err,result) => {
+      if(err) throw err ;
+      // console.log(result);
+      res.render("edit.ejs",{ result })
+    })
+  }catch(err){
+    console.log(err);
+    res.send("some error occured");
+  }
+})
+
+
+// UPDATE DATABASE
+app.patch("/user/:id", (req, res) => {
+  let { id } = req.params;
+  let { password: formPass, username: newUsername } = req.body;
+  let q = `SELECT * FROM user WHERE id='${id}'`;
+
+  try {
+    connection.query(q, (err, data) => {
+      if (err) throw err;
+      console.log(data);
+      let user = data[0];
+      if (!user) {
+        return res.send("User not found"); // Check if user exists
+      }
+
+      if (formPass != user.password) {
+        return res.send("Wrong Password"); // Return to avoid sending another response
+      }
+
+      // Here you can add code to update the user data if needed
+
+      res.send(user);
+    });
+  } catch (err) {
+    console.log(err);
+    res.send("some error occurred");
+  }
+});
+
 
 
 app.listen("8080",() => {
