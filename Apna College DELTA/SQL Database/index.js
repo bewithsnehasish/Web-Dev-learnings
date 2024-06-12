@@ -93,13 +93,13 @@ app.get("/user",(req,res) => {
 // To edit data of the Users Route 
 app.get("/user/:id/edit",( req, res ) =>{
   let {id} = req.params;
-  // console.log(id);
   let q = `SELECT * FROM user WHERE id='${id}'`;
   try{
     connection.query(q,(err,result) => {
       if(err) throw err ;
-      // console.log(result);
-      res.render("edit.ejs",{ result })
+      console.log(result);
+      let user = result[0];
+      res.render("edit.ejs",{ user })
     })
   }catch(err){
     console.log(err);
@@ -115,21 +115,21 @@ app.patch("/user/:id", (req, res) => {
   let q = `SELECT * FROM user WHERE id='${id}'`;
 
   try {
-    connection.query(q, (err, data) => {
+    connection.query(q, (err, result) => {
       if (err) throw err;
-      console.log(data);
-      let user = data[0];
-      if (!user) {
-        return res.send("User not found"); // Check if user exists
-      }
-
+      console.log(result);
+      let user = result[0];
       if (formPass != user.password) {
         return res.send("Wrong Password"); // Return to avoid sending another response
+      }else{
+        // Here you can add code to update the user data if needed
+        let q2 = `UPDATE user SET username='${newUsername}' WHERE id='${id}'`
+        connection.query(q2,(err,result)=>{
+          if(err) throw err ;
+          res.redirect("/user")
+        })
       }
 
-      // Here you can add code to update the user data if needed
-
-      res.send(user);
     });
   } catch (err) {
     console.log(err);
