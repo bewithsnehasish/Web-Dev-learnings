@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Username</title>
+    <title>Document</title>
 </head>
 <body>
-    <h2>You are about to edit this user : <%= user.email %></h2>
-    <form method="post" action="/user/<%= user.id %>?_method=PATCH" >
+    <h2>You are about to Delete this USER from the Database : <%= user.email %></h2>
+    <form method="POST" action="/user/<%= user.id %>?_method=DELETE" >
         <textarea name="username"><%= user.username %></textarea>
         <input type="password" name="password" placeholder="Enter Passoword">
-        <button>Confirm Edit</button>
+        <button>Confirm Delete</button>
     </form>
 </body>
 </html>

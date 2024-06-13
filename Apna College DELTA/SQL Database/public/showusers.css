@@ -1,30 +1,75 @@
+/* showusers.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f2f2f2, #cccccc);
+}
+
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Adjusted to take 100% width */
+    max-width: none; /* Adjusted to remove maximum width */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 18px;
-    text-align: left;
+    margin-top: 20px;
 }
 
 th, td {
-    padding: 12px 15px;
-    border: 2px solid #000; /* Black and bold borders */
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
 th {
-    background-color: #4CAF50; /* Dark green background */
-    color: #fff; /* White text */
-    font-weight: bold;
+    background-color: #3498db;
+    color: white;
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2; /* Light grey for even rows */
+    background-color: #f2f2f2;
 }
 
-tr:nth-child(odd) {
-    background-color: #e8f5e9; /* Light green for odd rows */
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-tr:hover {
-    background-color: #dcedc8; /* Slightly darker green on hover */
+.edit-btn {
+    background: #3498db;
+    color: #fff;
+}
+
+.edit-btn:hover {
+    background: #2980b9;
+}
+
+.delete-btn {
+    background: #e74c3c;
+    color: #fff;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
 }

@@ -7,28 +7,40 @@
     <link rel="stylesheet" href="/showusers.css">
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Email</th>
-            <th>Username</th>
-            <th>Password</th>
-            <th>Edit Details</th>
-        </tr>
-        <% for(user of users){ %>
-            <tr>
-                <td> <%= user.id  %></td>
-                <td> <%= user.email  %></td>
-                <td> <%= user.username  %></td>
-                <td> <%= user.password  %></td>
-                <td>
-                    <form method="GET" action="/user/<%=user.id %>/edit">
-                        <button>Edit Username</button>
-                    </form>
-                </td>
-            </tr>
-        <% } %>
-    </table>
+    <div class="container">
+        <h1>All Users</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Edit Details</th>
+                    <th>Delete User's Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let user of users) { %>
+                    <tr>
+                        <td><%= user.id %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.username %></td>
+                        <td><%= user.password %></td>
+                        <td>
+                            <form method="GET" action="/user/<%= user.id %>/edit">
+                                <button class="edit-btn">Edit Username</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form method="GET" action="/user/<%= user.id %>/delete">
+                                <button class="delete-btn">Delete User</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
-
