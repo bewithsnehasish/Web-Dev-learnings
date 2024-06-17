@@ -1,0 +1,57 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Heading */
+h3 {
+    color: #444;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Cards Container */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Chat Card */
+.chat {
+    background-color: #beeee8;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;  /* Ensures card takes full width of grid column */
+    max-width: 500px;
+    padding: 20px;
+    transition: transform 0.2s;
+}
+
+.chat:hover {
+    transform: translateY(-5px);
+}
+
+/* From and To */
+.from, .msg p {
+    margin: 10px 0;
+}
+
+.from {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Message */
+.msg {
+    background-color: #e9ecef;
+    border-left: 5px solid #007bff;
+    border-radius: 5px;
+    padding: 10px;
+    color: #333;
+}
