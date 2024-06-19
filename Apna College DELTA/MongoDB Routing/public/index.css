@@ -1,14 +1,36 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
+    background-color: #121212;
+    color: #e0e0e0;
     margin: 0;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Heading Container */
+.heading-container {
+    width: 100%;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* Heading */
 h3 {
-    color: #444;
+    color: #ff9800;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 28px;
+    margin: 0;
+}
+
+/* New Chat Button Container */
+.new-chat {
     text-align: center;
     margin-bottom: 20px;
 }
@@ -19,15 +41,16 @@ h3 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
+    width: 100%;
 }
 
 /* Chat Card */
 .chat {
-    background-color: #beeee8;
+    background-color: #1f1f1f;
     border: 2px solid #007bff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;  /* Ensures card takes full width of grid column */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
     max-width: 500px;
     padding: 20px;
     transition: transform 0.2s;
@@ -49,9 +72,41 @@ h3 {
 
 /* Message */
 .msg {
-    background-color: #e9ecef;
+    background-color: #333;
     border-left: 5px solid #007bff;
     border-radius: 5px;
     padding: 10px;
-    color: #333;
+    color: #e0e0e0;
+}
+
+/* Buttons */
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #ff5722;
+}
+
+.btn-danger:hover {
+    background-color: #e64a19;
+}
+
+/* Horizontal Line */
+hr {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 20px 0;
 }

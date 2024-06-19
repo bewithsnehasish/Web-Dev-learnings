@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit the Message</title>
+    <link rel="stylesheet" href="/edit.css">
 </head>
 <body>
-    <h2>Edit Your Chat:<%= chat._id %></h2>
-    <form action="" method="POST">
-        <h4>From : <%=chat.from %></h4>
-        <h5>Received: <%= chat.to %></h5>
-
-    </form>
-    <form action="">
-        <textarea name="msg" id="msg"></textarea>
-    </form>
+    <div class="card">
+        <h2>Edit Your Chat: <%= chat._id %></h2>
+        <p><b>From: </b><%= chat.from %></p>
+        <p><b>Received by: </b><%= chat.to %></p>
+        <form action="/chats/<%= chat._id %>?_method=PUT" method="POST">
+            <div class="form-group">
+                <label for="msg">Message:</label>
+                <textarea name="msg" id="msg" rows="10"><%= chat.msg %></textarea>
+            </div>
+            <button type="submit">Confirm Edit</button>
+        </form>
+    </div>
 </body>
 </html>
