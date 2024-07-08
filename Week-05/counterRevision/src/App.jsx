@@ -25,15 +25,14 @@ function App() {
 
     </div>
   )
+
   return (
     <>
       <div>
         <CustomButton count={count} setCount={setCount}></CustomButton>
       </div>
-
     </>
   )
-
 }
 
 function CustomButton(props) {
@@ -47,7 +46,7 @@ function CustomButton(props) {
   )
 }
 
-function todo(params) {
+function Todo(params) {
   return <div>
     <h2>Title : {params.title}</h2>
     <h4>Description : {params.description}</h4>
