@@ -7,6 +7,7 @@ function App() {
     <RecoilRoot>
       <Todo id={1} />
       <Todo id={2} />
+      <Todo id={3} />
     </RecoilRoot>
   );
 }
