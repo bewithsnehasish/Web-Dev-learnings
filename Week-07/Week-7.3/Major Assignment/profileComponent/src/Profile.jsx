@@ -1,5 +1,6 @@
 import "./Profile.css";
 
+
 const Profile = ({ image, name, age, location, followers, likes, photos }) => {
   return (
     <div className="profile">
