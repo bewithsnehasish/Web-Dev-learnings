@@ -11,6 +11,34 @@ export const Signup = () => {
   const [lastName, setLastName] = useState("");
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSignup = async () => {
+    // Basic validation
+    if (!firstName || !lastName || !userName || !password) {
+      setError("Please fill out all fields.");
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/api/v1/user/signup",
+        {
+          userName,
+          firstName,
+          lastName,
+          password,
+        },
+      );
+      console.log("Sign up successful:", response.data);
+      // Clear error if successful
+      setError("");
+      // You might want to redirect the user or perform other actions upon success
+    } catch (error) {
+      console.error("There was an error signing up:", error);
+      setError("There was an error signing up. Please try again.");
+    }
+  };
 
   return (
     <div className="bg-slate-300 h-screen flex justify-center">
@@ -18,42 +46,36 @@ export const Signup = () => {
         <div className="rounded-lg bg-white w-80 text-center p-2 h-max px-4">
           <Heading label={"Sign Up"} />
           <SubHeading label={"Enter Your information to create an account"} />
+
+          {error && <p className="text-red-500 mb-4">{error}</p>}
+
           <InputBox
-            onChange={(e) => {
-              setFirstName(e.target.value);
-            }}
+            onChange={(e) => setFirstName(e.target.value)}
             placeholder={"John"}
             label={"First Name"}
+            value={firstName}
           />
           <InputBox
-            onChange={(e) => {
-              setLastName(e.target.value);
-            }}
+            onChange={(e) => setLastName(e.target.value)}
             placeholder={"Doe"}
             label={"Last Name"}
+            value={lastName}
           />
           <InputBox
             onChange={(e) => setUserName(e.target.value)}
             placeholder={"harkirat@gmail.com"}
-            label={"email"}
+            label={"Email"}
+            value={userName}
           />
           <InputBox
             onChange={(e) => setPassword(e.target.value)}
             placeholder={"123456"}
             label={"Password"}
+            value={password}
+            type="password"
           />
           <div className="pt-4">
-            <Button
-              onClick={async () => {
-                axios.post("http://localhost:8080/api/v1/user/signup", {
-                  userName,
-                  firstName,
-                  lastName,
-                  password,
-                });
-              }}
-              label={"Sign Up"}
-            />
+            <Button onClick={handleSignup} label={"Sign Up"} />
           </div>
           <BottomWarning
             label={"Already have an Account"}
