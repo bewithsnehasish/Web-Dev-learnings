@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration Form</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+        <form class="bg-white shadow-xl rounded-lg px-8 pt-6 pb-8 mb-4 w-full max-w-md"
+              action="/submit"
+              method="GET">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold text-gray-800 mb-2">Registration Form</h1>
+                <p class="text-gray-600">Please enter your details below</p>
+            </div>
+            <div class="mb-6">
+                <img src="https://picsum.photos/200"
+                     alt="Profile placeholder"
+                     class="mx-auto rounded-full shadow-lg">
+            </div>
+            <div class="space-y-6">
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Full Name</label>
+                    <input class="shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                           id="name"
+                           name="name"
+                           type="text"
+                           placeholder="Enter your full name"
+                           required />
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="registration">Registration Number</label>
+                    <input class="shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                           id="registration"
+                           name="registration"
+                           type="text"
+                           pattern="[0-9]*"
+                           placeholder="Enter your registration number"
+                           required />
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="section">Section</label>
+                    <select class="shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            id="section"
+                            name="section"
+                            required>
+                        <option value="">Select your section</option>
+                        <option value="A">Section A</option>
+                        <option value="B">Section B</option>
+                        <option value="C">Section C</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="dob">Date of Birth</label>
+                    <input class="shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                           id="dob"
+                           name="dob"
+                           type="date"
+                           required />
+                </div>
+                <div class="flex items-center justify-between gap-4 pt-4">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors duration-200"
+                            type="submit">Submit</button>
+                    <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition-colors duration-200"
+                            type="reset">Reset</button>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
+
