@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My Webpage</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+              rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container mx-auto">
+            Elit minus nesciunt unde repudiandae quae ratione officia quae facere ullam nesciunt quo vel repudiandae tempora eveniet veritatis. Impedit iste reiciendis pariatur error nobis.
+            <!-- First Box -->
+            <div class="flex flex-wrap justify-center">
+                <div class=" border-2 border-black rounded-lg p-4 m-4 w-96 h-96 relative"
+                     style="background-image: url('https://picsum.photos/seed/picsum/300/400');
+                            background-size: cover">
+                    <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+                    <span class="relative z-10 text-white">Heloowww</span>
+                </div>
+                <!-- Second Box -->
+                <div class=" border-2 border-black rounded-lg p-4 m-4 w-96 h-96 relative"
+                     style="background-image: url('https://picsum.photos/seed/picsum/300/400');
+                            background-size: cover">
+                    <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+                    <span class="relative z-10 text-white">Heloowww</span>
+                </div>
+            </div>
+            <!-- All the different types of borders   -->
+            <div class="container mx-auto p-4">
+                <h1 class="text-2xl font-bold mb-4">All Types of Borders</h1>
+                <!-- Solid Border -->
+                <div class="border border-solid border-black p-4 m-4">
+                    <strong>Solid Border:</strong> This is a solid border.
+                </div>
+                <!-- Dashed Border -->
+                <div class="border border-dashed border-black p-4 m-4">
+                    <strong>Dashed Border:</strong> This is a dashed border.
+                </div>
+                <!-- Dotted Border -->
+                <div class="border border-dotted border-black p-4 m-4">
+                    <strong>Dotted Border:</strong> This is a dotted border.
+                </div>
+                <!-- Double Border -->
+                <div class="border border-double border-black p-4 m-4">
+                    <strong>Double Border:</strong> This is a double border.
+                </div>
+                <!-- No Border -->
+                <div class="border border-none p-4 m-4">
+                    <strong>No Border:</strong> This element has no border.
+                </div>
+                <!-- Hidden Border -->
+                <div class="border border-hidden p-4 m-4">
+                    <strong>Hidden Border:</strong> This element has a hidden border (reserves space but doesn't show).
+                </div>
+                <!-- Custom Border Width and Color -->
+                <div class="border-4 border-dashed border-blue-500 p-4 m-4">
+                    <strong>Custom Border:</strong> This has a custom border width (4px), dashed style, and blue color.
+                </div>
+                <!-- Rounded Border -->
+                <div class="border border-solid border-black rounded-lg p-4 m-4">
+                    <strong>Rounded Border:</strong> This border has rounded corners.
+                </div>
+                <!-- Thick Border -->
+                <div class="border-8 border-solid border-green-500 p-4 m-4">
+                    <strong>Thick Border:</strong> This border is thicker (8px) and green.
+                </div>
+                <!-- Gradient Border -->
+                <div class="border-4 border-solid p-4 m-4"
+                     style="border-image: linear-gradient(to right, red, blue) 1">
+                    <strong>Gradient Border:</strong> This border uses a gradient (requires custom CSS).
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
