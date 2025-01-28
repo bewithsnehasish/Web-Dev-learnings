@@ -1,0 +1,61 @@
+#Make a calculator with grid and in tailwind css with black background button white text black C button color red and / * - + buttons as blue and equal to button as green answer will be at the top row with light teal colourcolumn then there will be total
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <div class="flex justify-center items-center h-screen ">
+        <body class="bg-black flex justify-center items-center h-screen">
+            <div class="calculator grid grid-cols-4 gap-2 w-80 p-4 bg-gray-800 rounded-lg">
+                <input type="text"
+                       id="display"
+                       disabled
+                       class="col-span-4 p-4 text-right text-2xl bg-teal-100 text-black rounded-lg"
+                       placeholder="0">
+                <button class="clear col-span-2 p-4 bg-red-500 text-white rounded-lg">C</button>
+                <button class="operator p-4 bg-blue-500 text-white rounded-lg">/</button>
+                <button class="operator p-4 bg-blue-500 text-white rounded-lg">*</button>
+                <button class="number p-4 bg-gray-100 text-black rounded-lg">7</button>
+                <button class="number p-4 bg-gray-700 text-white rounded-lg">8</button>
+                <button class="number p-4 bg-gray-700 text-white rounded-lg">9</button>
+                <button class="operator p-4 bg-blue-500 text-white rounded-lg">-</button>
+                <button class="number p-4 bg-gray-700 text-white rounded-lg">4</button>
+                <button class="number p-4 bg-gray-700 text-white rounded-lg">5</button>
+                <button class="number p-4 bg-gray-700 text-white rounded-lg">6</button>
+                <button class="operator p-4 bg-blue-500 text-white rounded-lg">+</button>
+                <button class="number p-4 bg-gray-700 text-white rounded-lg">1</button>
+                <button class="number p-4 bg-gray-700 text-white rounded-lg">2</button>
+                <button class="number p-4 bg-gray-700 text-white rounded-lg">3</button>
+                <button class="equal row-span-2 p-4 bg-green-500 text-white rounded-lg">=</button>
+                <button class="number col-span-2 p-4 bg-gray-700 text-white rounded-lg">0</button>
+                <button class="number p-4 bg-gray-700 text-white rounded-lg">.</button>
+            </div>
+            <script>
+        const display = document.getElementById('display');
+        const buttons = document.querySelectorAll('.calculator button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const value = button.textContent;
+
+                if (button.classList.contains('clear')) {
+                    display.value = '';
+                } else if (button.classList.contains('equal')) {
+                    try {
+                        display.value = eval(display.value);
+                    } catch {
+                        display.value = 'Error';
+                    }
+                } else {
+                    display.value += value;
+                }
+            });
+        });
+            </script>
+        </body>
+    </div>
+</html>
+
