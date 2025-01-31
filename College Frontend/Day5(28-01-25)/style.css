@@ -1,0 +1,35 @@
+.fconatainer{
+  display: flex;
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  flex-wrap: wrap-reverse;
+}
+
+.fcon-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid black;
+}
+
+.fcon-header h1{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.fcon-header button{
+  padding: 5px 10px;
+  border: 1px solid black;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.fcon-header button:hover{
+  background-color: rgb(230, 230, 230);
+}
+
+

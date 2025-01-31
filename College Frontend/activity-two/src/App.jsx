@@ -65,11 +65,11 @@ function App() {
           </a>
           |{" "}
           <a href="/instagram" className="text-green-600">
-            Instagram
+            Twitter
           </a>
           |{" "}
           <a href="/instagram" className="text-green-600">
-            Instagram
+            Linkedin
           </a>
         </p>
       </footer>
